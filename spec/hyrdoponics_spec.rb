@@ -45,5 +45,3 @@ describe "hydroponics" do
     expect(highest_average).to eq(expected_output)
   end
 end
-end
-

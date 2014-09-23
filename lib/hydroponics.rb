@@ -28,14 +28,20 @@ class Hydroponics
   end
 
   def highest_averages(containers)
-    temp_sum, water_level_sum, count = 0, 0, 0, 0, 0.0
+    temp_sum, water_level_sum, count = 0, 0, 0.0
     CSV.foreach(@filepath, {:col_sep => " "}) do |row|
       if row[3][-1].to_i == containers
         temp_sum += row[6].to_i
         water_level_sum += row[7].to_f
         count += 1.0
       end
-  end
+    end
+    {
+      container: containers,
+      temp: (temp_sum/count).round(2),
+      water_level: (water_level_sum/count).round(2)
+    }
   end
 end
+
 
