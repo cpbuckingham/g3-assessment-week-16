@@ -18,13 +18,14 @@ class Hydroponics
         count += 1.0
       end
     end
-    {
+    test = {
       container: containers,
       ph: (ph_sum/count).round(2),
       nsl: (nsl_sum/count).round(2),
       temp: (temp_sum/count).round(2),
       water_level: (water_level_sum/count).round(2)
     }
+    puts test
   end
 
   def highest_averages(containers)
@@ -45,3 +46,12 @@ class Hydroponics
 end
 
 
+
+# def parse
+#   headers = {
+#     :timstamp...
+#   }
+# end
+#:write_headers => true,
+# :headers => headers,
+# :col_sep => "/t"
